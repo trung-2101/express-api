@@ -46,7 +46,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const deleted = await Test2.findByIdAndDelete(req.params.id);
     // if (!deleted) return res.status(404).json({ error: 'Không tìm thấy bản ghi' });
-    if(!deleted) return res.status(404).json({error:'data not found'})
+    if(!deleted) return res.status(404).json({error:'không tìm thấy bản ghi nào'})
     res.json({ message: 'Đã xóa thành công' });
   } catch (err) {
     res.status(400).json({ error: err.message });
